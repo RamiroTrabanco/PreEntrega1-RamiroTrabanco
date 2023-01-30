@@ -82,5 +82,5 @@ export default class ProductManager {
     }
 }
 
-let products = new ProductManager()
-let product = {id:1,title:"cuchuflito",description:"cuchuflo",price:500,code:10,stock:300,status:true}
+/* let products = new ProductManager()
+let product = {id:1,title:"cuchuflito",description:"cuchuflo",price:500,code:10,stock:300,status:true} */
