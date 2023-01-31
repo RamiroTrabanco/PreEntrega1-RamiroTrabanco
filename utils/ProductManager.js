@@ -62,7 +62,21 @@ export default class ProductManager {
 
     async updateProduct(prod){
         const prodToUpdate = await this.getProductsById(parseInt(prod.id))
-        
+        const newProd = {
+            title: prod.title ? prod.title : prodToUpdate.title,
+            description: prod.description ? prod.description : prodToUpdate.description,
+            price: prod.price ? prod.price : prodToUpdate.price,
+            stock: prod.stock ? prod.stock : prodToUpdate.stock,
+            code: prod.code ? prod.code : prodToUpdate.code,
+            category: prod.category ? prod.category : prodToUpdate.category,
+            status: true,
+            id: parseInt(prod.id)
+        }
+        this.products.push(newProd)
+        const indexProdToUpdate = this.products.indexOf(prodToUpdate)
+        this.products.splice(indexProdToUpdate, 1)
+        await fs.promises.writeFile(this.path, JSON.stringify(this.products))
+        return newProd
     }
     
 
