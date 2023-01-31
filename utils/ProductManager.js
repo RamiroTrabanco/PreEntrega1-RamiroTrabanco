@@ -70,6 +70,7 @@ export default class ProductManager {
             code: prod.code ? prod.code : prodToUpdate.code,
             category: prod.category ? prod.category : prodToUpdate.category,
             status: true,
+            thumbnails: prod.thumbnails ? prod.thumbnails : prodToUpdate.thumbnails || " ",
             id: parseInt(prod.id)
         }
         this.products.push(newProd)
